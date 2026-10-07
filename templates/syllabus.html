@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}PSC Syllabus - PSC Finder{% endblock %}
+
+{% block content %}
+
+<section class="syllabus-page">
+
+    <div class="section-heading">
+
+        <p>PSC SYLLABUS</p>
+
+        <h1>Find Your Syllabus</h1>
+
+        <p class="page-description">
+            Search for a post and explore its syllabus topics.
+        </p>
+
+    </div>
+
+
+    <form method="GET" class="syllabus-search">
+
+        <input
+            type="text"
+            name="search"
+            placeholder="Search post name..."
+            value="{{ search }}"
+        >
+
+        <button type="submit" class="btn primary">
+            Search
+        </button>
+
+    </form>
+
+
+    <div class="syllabus-grid">
+
+        {% for item in syllabuses %}
+
+        <div class="syllabus-card">
+
+            <span class="post-status">
+                SAMPLE DATA
+            </span>
+
+            <h3>{{ item.post }}</h3>
+
+            <p>
+                {{ item.description }}
+            </p>
+
+            <div class="topic-count">
+                {{ item.topics|length }} Topics
+            </div>
+
+            <a
+                href="/syllabus/{{ item.id }}"
+                class="details-btn"
+            >
+                View Syllabus →
+            </a>
+
+        </div>
+
+        {% else %}
+
+        <div class="no-results">
+
+            <h3>No syllabus found</h3>
+
+            <p>
+                Try searching for another post.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

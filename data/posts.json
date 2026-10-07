@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "Computer Programmer",
+        "qualification": "MCA",
+        "min_age": 18,
+        "max_age": 36,
+        "district": "All Kerala",
+        "status": "Sample Data",
+        "description": "A sample technical post created for testing the PSC Finder application.",
+        "important": "This is sample data. Always verify the official PSC notification before applying."
+    },
+    {
+        "id": 2,
+        "name": "Computer Assistant",
+        "qualification": "Any Degree",
+        "min_age": 18,
+        "max_age": 36,
+        "district": "All Kerala",
+        "status": "Sample Data",
+        "description": "A sample post used to demonstrate qualification-based filtering.",
+        "important": "This is sample data. Always verify the official PSC notification before applying."
+    },
+    {
+        "id": 3,
+        "name": "Clerk",
+        "qualification": "Plus Two",
+        "min_age": 18,
+        "max_age": 36,
+        "district": "All Kerala",
+        "status": "Sample Data",
+        "description": "A sample clerical post for demonstrating the PSC Finder system.",
+        "important": "This is sample data. Always verify the official PSC notification before applying."
+    },
+    {
+        "id": 4,
+        "name": "Data Entry Operator",
+        "qualification": "Any Degree",
+        "min_age": 18,
+        "max_age": 36,
+        "district": "All Kerala",
+        "status": "Sample Data",
+        "description": "A sample data-entry related post used for testing.",
+        "important": "This is sample data. Always verify the official PSC notification before applying."
+    }
+]

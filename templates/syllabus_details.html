@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}{{ syllabus.post }} Syllabus - PSC Finder{% endblock %}
+
+{% block content %}
+
+<section class="syllabus-details-page">
+
+    <a href="/syllabus" class="back-link">
+        ← Back to Syllabus
+    </a>
+
+
+    <div class="syllabus-details-card">
+
+        <span class="post-status">
+            SAMPLE DATA
+        </span>
+
+        <h1>{{ syllabus.post }}</h1>
+
+        <p class="details-description">
+            {{ syllabus.description }}
+        </p>
+
+
+        <div class="syllabus-heading">
+
+            <p>SYLLABUS TOPICS</p>
+
+            <h2>
+                {{ syllabus.topics|length }} Topics
+            </h2>
+
+        </div>
+
+
+        <div class="topics-list">
+
+            {% for topic in topics %}
+
+            <div class="topic">
+
+                <span class="topic-number">
+                    {{ "%02d"|format(loop.index) }}
+                </span>
+
+                <span>
+                    {{ topic["topic"] }}
+                </span>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <div class="important-box">
+
+            <h3>Important</h3>
+
+            <p>
+                This syllabus is currently sample data for the
+                PSC Finder application. Always verify the latest
+                official Kerala PSC syllabus before preparing
+                for an examination.
+            </p>
+
+        </div>
+
+
+        <div class="official-section">
+
+            <h3>Official Source</h3>
+
+            <p>
+                Check the official Kerala PSC website for the
+                latest syllabus and examination information.
+            </p>
+
+            <a
+                href="https://www.keralapsc.gov.in/"
+                target="_blank"
+                class="btn primary"
+            >
+                Visit Kerala PSC
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

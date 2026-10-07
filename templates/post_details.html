@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.name }} - PSC Finder{% endblock %}
+
+{% block content %}
+
+<section class="post-details-page">
+
+    <a href="/posts" class="back-link">
+        ← Back to Find Posts
+    </a>
+
+
+    <div class="post-details-card">
+
+        <span class="post-status">
+            {{ post.status }}
+        </span>
+
+        <h1>{{ post.name }}</h1>
+
+        <p class="details-description">
+            {{ post.description }}
+        </p>
+
+
+        <div class="details-grid">
+
+            <div class="detail-item">
+                <span>Qualification</span>
+                <strong>{{ post.qualification }}</strong>
+            </div>
+
+            <div class="detail-item">
+                <span>Age Limit</span>
+                <strong>
+                    {{ post.min_age }} – {{ post.max_age }} years
+                </strong>
+            </div>
+
+            <div class="detail-item">
+                <span>District</span>
+                <strong>{{ post.district }}</strong>
+            </div>
+
+            <div class="detail-item">
+                <span>Post Status</span>
+                <strong>{{ post.status }}</strong>
+            </div>
+
+        </div>
+
+
+        <div class="important-box">
+
+            <h3>Important</h3>
+
+            <p>
+                {{ post.important }}
+            </p>
+
+        </div>
+
+
+        <div class="official-section">
+
+            <h3>Official Information</h3>
+
+            <p>
+                For the actual eligibility requirements, application
+                procedure and current notification, always check the
+                official Kerala PSC notification.
+            </p>
+
+            <a
+                href="https://www.keralapsc.gov.in/"
+                target="_blank"
+                class="btn primary"
+            >
+                Visit Kerala PSC
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "post": "Computer Programmer",
+        "description": "Sample syllabus for demonstrating the PSC Finder syllabus system.",
+        "topics": [
+            "Computer Fundamentals",
+            "Programming Concepts",
+            "Data Structures",
+            "Database Management Systems",
+            "Operating Systems",
+            "Computer Networks",
+            "Web Technologies",
+            "Software Engineering"
+        ]
+    },
+    {
+        "id": 2,
+        "post": "Computer Assistant",
+        "description": "Sample syllabus for testing post-based syllabus searching.",
+        "topics": [
+            "Computer Fundamentals",
+            "Office Applications",
+            "Internet and Networking",
+            "Database Basics",
+            "Information Technology",
+            "General Knowledge"
+        ]
+    },
+    {
+        "id": 3,
+        "post": "Clerk",
+        "description": "Sample syllabus for demonstrating a general PSC preparation syllabus.",
+        "topics": [
+            "General Knowledge",
+            "Current Affairs",
+            "Indian Constitution",
+            "History",
+            "Geography",
+            "Basic Mathematics",
+            "Mental Ability"
+        ]
+    }
+]

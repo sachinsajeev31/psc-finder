@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}{{ exam.post }} Exam - PSC Finder{% endblock %}
+
+{% block content %}
+
+<section class="exam-details-page">
+
+    <a href="/exams" class="back-link">
+        ← Back to Exams
+    </a>
+
+
+    <div class="exam-details-card">
+
+        <span class="post-status">
+            {{ exam.status }}
+        </span>
+
+
+        <h1>
+            {{ exam.post }}
+        </h1>
+
+
+        <p class="details-description">
+            {{ exam.description }}
+        </p>
+
+
+        <div class="exam-detail-grid">
+
+            <div class="detail-item">
+
+                <span>
+                    Examination Date
+                </span>
+
+                <strong>
+                    {{ exam.exam_date }}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span>
+                    Category
+                </span>
+
+                <strong>
+                    {{ exam.category }}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span>
+                    Status
+                </span>
+
+                <strong>
+                    {{ exam.status }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="important-box">
+
+            <h3>Important</h3>
+
+            <p>
+                This examination information is currently
+                sample data. Always verify the latest
+                examination date and notification with
+                Kerala PSC before making any decision.
+            </p>
+
+        </div>
+
+
+        <div class="official-section">
+
+            <h3>
+                Official Information
+            </h3>
+
+            <p>
+                Check the official Kerala PSC website for
+                the latest examination calendar,
+                notifications and updates.
+            </p>
+
+            <a
+                href="https://www.keralapsc.gov.in/"
+                target="_blank"
+                class="btn primary"
+            >
+                Visit Kerala PSC
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

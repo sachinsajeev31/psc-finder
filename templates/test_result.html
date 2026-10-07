@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block title %}Test Result - PSC Finder{% endblock %}
+
+{% block content %}
+
+<div class="result-page">
+
+    <div class="result-card">
+
+        <h1>Test Completed 🎉</h1>
+
+        <p class="result-label">
+            Your Score
+        </p>
+
+        <div class="score">
+            {{ score }} / {{ total }}
+        </div>
+
+        <p class="result-message">
+
+            {% if percentage >= 80 %}
+                Excellent performance! Keep it up. 💪
+            {% elif percentage >= 60 %}
+                Good performance! Keep practicing. 👍
+            {% elif percentage >= 40 %}
+                You are improving. More practice will help. 📚
+            {% else %}
+                Don't worry. Keep practicing and improve step by step. 🌱
+            {% endif %}
+
+        </p>
+
+
+        <!-- Overall Statistics -->
+
+        <div class="result-stats">
+
+            <div>
+                <strong>{{ correct }}</strong>
+                <span>Correct</span>
+            </div>
+
+            <div>
+                <strong>{{ wrong }}</strong>
+                <span>Wrong</span>
+            </div>
+
+            <div>
+                <strong>{{ percentage }}%</strong>
+                <span>Percentage</span>
+            </div>
+
+        </div>
+
+
+        <!-- Subject Analysis -->
+
+        <div class="subject-analysis">
+
+            <h2>Subject-wise Performance</h2>
+
+            {% for subject, stats in subject_stats.items() %}
+
+            <div class="subject-row">
+
+                <div class="subject-info">
+
+                    <strong>
+                        {{ subject }}
+                    </strong>
+
+                    <span>
+                        {{ stats.correct }} /
+                        {{ stats.total }}
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        style="width: {{ stats.percentage }}%;"
+                    >
+                    </div>
+
+                </div>
+
+                <p>
+                    {{ stats.percentage }}%
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Strength -->
+
+        <div class="analysis-box">
+
+            <h3>💪 Strongest Subject</h3>
+
+            <p>
+                {{ strongest_subject }}
+            </p>
+
+        </div>
+
+
+        <!-- Weakness -->
+
+        <div class="analysis-box weak">
+
+            <h3>⚠️ Needs More Practice</h3>
+
+            <p>
+                {{ weakest_subject }}
+            </p>
+
+        </div>
+
+
+        <!-- Recommendation -->
+
+        <div class="recommendation">
+
+            <h3>💡 Recommendation</h3>
+
+            <p>
+                Spend more time practicing
+                <strong>{{ weakest_subject }}</strong>
+                questions.
+            </p>
+
+        </div>
+
+
+        <!-- Buttons -->
+
+        <div class="result-actions">
+
+            <a href="/mock-test" class="primary-btn">
+                Try Again
+            </a>
+
+            <a href="/mock-tests" class="secondary-btn">
+                All Mock Tests
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Take Mock Test - PSC Finder{% endblock %}
+
+{% block content %}
+
+<section class="test-page">
+
+    <div class="test-header">
+
+        <p>PSC PRACTICE TEST</p>
+
+        <h1>General PSC Practice Test</h1>
+
+        <span>
+            {{ questions|length }} Questions
+        </span>
+
+    </div>
+
+
+    <form method="POST">
+
+        {% for question in questions %}
+
+        <div class="question-card">
+
+            <div class="question-number">
+                Question {{ loop.index }}
+            </div>
+
+            <h2>
+                {{ question.question }}
+            </h2>
+
+
+            <div class="options">
+
+                {% for option in question.options %}
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="question_{{ question.id }}"
+                        value="{{ loop.index0 }}"
+                        required
+                    >
+
+                    <span>
+                        {{ option }}
+                    </span>
+
+                </label>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+
+        <div class="submit-test">
+
+            <button
+                type="submit"
+                class="btn primary"
+            >
+                Submit Test
+            </button>
+
+        </div>
+
+    </form>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "post": "Computer Programmer",
+        "category": "Technical",
+        "exam_date": "15 November 2026",
+        "status": "Upcoming",
+        "description": "Sample examination record for testing the PSC Finder exam system."
+    },
+    {
+        "id": 2,
+        "post": "Computer Assistant",
+        "category": "Technical",
+        "exam_date": "22 November 2026",
+        "status": "Upcoming",
+        "description": "Sample examination record for demonstrating upcoming exam information."
+    },
+    {
+        "id": 3,
+        "post": "Clerk",
+        "category": "General",
+        "exam_date": "29 November 2026",
+        "status": "Upcoming",
+        "description": "Sample examination record for testing the PSC Finder application."
+    },
+    {
+        "id": 4,
+        "post": "Data Entry Operator",
+        "category": "Technical",
+        "exam_date": "06 December 2026",
+        "status": "Upcoming",
+        "description": "Sample examination record for demonstrating technical examinations."
+    }
+]

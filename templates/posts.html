@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{% block title %}Find PSC Posts - PSC Finder{% endblock %}
+
+{% block content %}
+
+<section class="posts-page">
+
+    <div class="section-heading">
+        <p>PSC POST FINDER</p>
+        <h1>Find Posts That Match You</h1>
+
+        <p class="page-description">
+            Enter your basic details to find posts that match
+            the information you provide.
+        </p>
+    </div>
+
+
+    <form method="POST" class="filter-box">
+
+        <div class="form-group">
+
+            <label for="qualification">
+                Qualification
+            </label>
+
+            <select name="qualification" id="qualification">
+
+                <option value="MCA">MCA</option>
+                <option value="Any Degree">Any Degree</option>
+                <option value="Plus Two">Plus Two</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="age">
+                Age
+            </label>
+
+            <input
+                type="number"
+                name="age"
+                id="age"
+                min="1"
+                max="100"
+                placeholder="Enter your age"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="district">
+                District
+            </label>
+
+            <select name="district" id="district">
+
+                <option value="All Kerala">
+                    All Kerala
+                </option>
+
+                <option value="Kannur">
+                    Kannur
+                </option>
+
+                <option value="Kozhikode">
+                    Kozhikode
+                </option>
+
+                <option value="Kochi">
+                    Ernakulam
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button type="submit" class="btn primary">
+            Find Posts
+        </button>
+
+    </form>
+
+
+    {% if searched %}
+
+    <section class="results">
+
+        <div class="results-heading">
+
+            <p>RESULTS</p>
+
+            <h2>
+                Matching Posts
+            </h2>
+
+        </div>
+
+
+        {% if matching_posts %}
+
+            <div class="post-grid">
+
+                {% for post in matching_posts %}
+
+                <div class="post-card">
+
+                    <span class="post-status">
+                        {{ post.status }}
+                    </span>
+
+                    <h3>
+                        {{ post.name }}
+                    </h3>
+
+                    <div class="post-info">
+
+                        <p>
+                            <strong>Qualification:</strong>
+                            {{ post.qualification }}
+                        </p>
+
+                        <p>
+                            <strong>Age:</strong>
+                            {{ post.min_age }}–{{ post.max_age }}
+                        </p>
+
+                        <p>
+                            <strong>District:</strong>
+                            {{ post.district }}
+                        </p>
+
+                    </div>
+
+                   <a
+    href="/post/{{ post.id }}"
+    class="details-btn"
+>
+    View Details
+</a>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="no-results">
+
+                <h3>No matching posts found</h3>
+
+                <p>
+                    Try changing your qualification or age.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

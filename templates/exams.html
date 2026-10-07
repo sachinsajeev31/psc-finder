@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}PSC Exams - PSC Finder{% endblock %}
+
+{% block content %}
+
+<section class="exams-page">
+
+    <div class="section-heading">
+
+        <p>PSC EXAMINATIONS</p>
+
+        <h1>Upcoming Exams</h1>
+
+        <p class="page-description">
+            Keep track of upcoming PSC examinations
+            and important examination information.
+        </p>
+
+    </div>
+
+
+    <div class="exam-filters">
+
+        <a
+            href="/exams"
+            class="filter-btn {% if not selected_category %}active{% endif %}"
+        >
+            All
+        </a>
+
+        <a
+            href="/exams?category=Technical"
+            class="filter-btn {% if selected_category == 'Technical' %}active{% endif %}"
+        >
+            Technical
+        </a>
+
+        <a
+            href="/exams?category=General"
+            class="filter-btn {% if selected_category == 'General' %}active{% endif %}"
+        >
+            General
+        </a>
+
+    </div>
+
+
+    <div class="exam-list">
+
+        {% for exam in exams %}
+
+        <div class="exam-card">
+
+            <div class="exam-date">
+
+                <span class="date-label">
+                    EXAM DATE
+                </span>
+
+                <strong>
+                    {{ exam.exam_date }}
+                </strong>
+
+            </div>
+
+
+            <div class="exam-info">
+
+                <span class="post-status">
+                    {{ exam.status }}
+                </span>
+
+                <h3>
+                    {{ exam.post }}
+                </h3>
+
+                <p>
+                    Category:
+                    <strong>{{ exam.category }}</strong>
+                </p>
+
+                <p class="exam-description">
+                    {{ exam.description }}
+                </p>
+
+            </div>
+
+
+            <div class="exam-action">
+
+                <a
+                    href="/exam/{{ exam.id }}"
+                    class="details-btn"
+                >
+                    View Details →
+                </a>
+
+            </div>
+
+        </div>
+
+        {% else %}
+
+        <div class="no-results">
+
+            <h3>No exams found</h3>
+
+            <p>
+                No examinations are available for this category.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
